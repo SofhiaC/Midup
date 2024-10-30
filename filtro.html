@@ -37,10 +37,11 @@
     </div>
     <!-- Barra de pesquisa -->
     <div class="barra_geral">
-        <form action="/pesquisar" method="post">
-            <label for="ingrediente"></label>
-            <input type="text" id="ingrediente" name="ingrediente" placeholder="Insira um ingrediente" required>
-            <button type="submit"><img src="imagens/lupa_pesquisa.png"></button>
+        <form action="/pesquisar" method="get">
+            <div id="pesquisa_filtro">
+                <input type="text" id="txtBusca" placeholder="Insira um ingrediente..."/>
+                <button><img src="imagens/lupa_pesquisa.png" id="btnBusca" alt="Buscar"/></button>  
+            </div>
         </form>
     </div>
     <br>

@@ -113,6 +113,16 @@ hr{
     margin-left: 0px;
 }
 
+#textBusca{
+    background-color:transparent;
+}
+
+.pesquisa_filtro {
+    background-color: #fff;
+    width: 50%;
+    height: 40px;
+}
+
 h2{
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
