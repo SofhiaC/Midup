@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReVirado</title>
+    <link rel="stylesheet" href="blog.css">
+    <!-- Fonte Calligrafitti usada no título -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
+    <!--Fonte jaldi-->
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+    <!--Fonte inter-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="revirado">ReVirado</h1>
+    
+    <div class="botoes_salvos_e_notif">
+        <a><img src="imagens/botao_notif.png" alt="Notificações" class="botao1"></a>
+        <a><img src="imagens/botao_salvos.png" alt="Salvos" class="botao2"></a>
+    </div>
+    <!-- Esse hr é o responsável por fazer a linha horizontal -->
+    <hr/>
+    <div class="nav">
+        <div class="navbar">
+            <a>Home</a>
+            <a href="filtro.html">Filtro</a>
+            <a>Receita</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <div class="usuario">
+            <h3> Usuário </h3>
+            <img src="imagens/foto_usuario.png" alt="Foto de perfil">
+        </div>
+    </div>
+    <!-- Barra de pesquisa -->
+    <div class="barra_geral">
+        <form action="/pesquisar" method="post">
+            <label for="ingrediente"></label>
+            <input type="text" id="ingrediente" name="ingrediente" placeholder="Insira um ingrediente" required>
+            <button type="submit"><img src="imagens/lupa_pesquisa.png"></button>
+        </form>
+    </div>
+    <br>
+</body>
+</html>

@@ -61,6 +61,8 @@ hr{
 .navbar a{
     margin-left: 8px;
     cursor: pointer;
+    text-decoration: none;
+    color: #000;
 }
 
 /* tem que descobrir como sparar mais a foto do nome do usuário */
@@ -120,15 +122,346 @@ h2{
     font-size: 30px;
 }
 
+.carrossel{
+    display: flex;
+    justify-content: space-evenly;
+}
 
+.comida1{
+    background-color: #edecec ;
+    height: 350px;
+    width: 200px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px darkgrey;
+    cursor: pointer;
+}
 
+.comida1 .foto{
+    height: auto;
+    width: 170px;
+    margin-top: 20px;
+}
 
+.comida1 h4{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 15px;
+    width: 200px;
+}
 
+.comida1 .estrelas{
+    height: 25px;
 
+}
 
+.comida2{
+    background-color: #edecec ;
+    height: 350px;
+    width: 200px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px darkgrey;
+    cursor: pointer;
+}
 
+.comida2 .foto{
+    height: auto;
+    width: 170px;
+    margin-top: 20px;
+}
 
+.comida2 h4{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 15px;
+    width: 200px;
+}
 
+.comida3{
+    background-color: #edecec ;
+    height: 350px;
+    width: 200px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px darkgrey;
+    cursor: pointer;
+}
+
+.comida3 .foto{
+    height: auto;
+    width: 170px;
+    margin-top: 20px;
+}
+
+.comida3 h4{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 15px;
+    width: 200px;
+}
+
+.comida4{
+    background-color: #edecec ;
+    height: 350px;
+    width: 200px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px darkgrey;
+    cursor: pointer;
+}
+
+.comida4 .foto{
+    height: auto;
+    width: 170px;
+    margin-top: 20px;
+}
+
+.comida4 h4{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 15px;
+    width: 200px;   
+}
+
+.comida5{
+    background-color: #edecec ;
+    height: 350px;
+    width: 200px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px darkgrey;
+    cursor: pointer;
+}
+
+.comida5 .foto{
+    height: auto;
+    width: 170px;
+    margin-top: 20px;
+}
+
+.comida5 h4{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 15px;
+    width: 200px;   
+}
+
+.linha1{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.receitas_rapidas{
+    background-color: #f2f2f2;
+    height: 200px;
+    width: 35%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px darkgrey;
+    cursor: pointer;
+}
+
+.receitas_rapidas h3{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.receitas_rapidas p{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+.receitas_rapidas img{
+    height: 65px;
+}
+
+.cafe_da_manha{
+    background-color: #f2f2f2;
+    height: 200px;
+    width: 35%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px darkgrey;
+    cursor: pointer;
+}
+
+.cafe_da_manha h3{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.cafe_da_manha p{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+.cafe_da_manha img{
+    height: 65px;
+}
+
+.linha2{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.almoco {
+    background-color: #f2f2f2;
+    height: 200px;
+    width: 35%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px darkgrey;
+    cursor: pointer;
+}
+
+.almoco h3{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.almoco p{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+.almoco img{
+    height: 65px; 
+}
+
+.jantar{
+    background-color: #f2f2f2;
+    height: 200px;
+    width: 35%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px darkgrey;
+    cursor: pointer;
+}
+
+.jantar h3{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.jantar p{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+.jantar img{
+    height: 65px; 
+}
+
+.linha3{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sobremesas{
+    background-color: #f2f2f2;
+    height: 200px;
+    width: 35%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px darkgrey;
+    cursor: pointer;
+}
+
+.sobremesas h3{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.sobremesas p{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+.sobremesas img{
+    height: 65px; 
+}
+
+.receitas_veganas{
+    background-color: #f2f2f2;
+    height: 200px;
+    width: 35%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 1px darkgrey;
+    cursor: pointer;
+}
+
+.receitas_veganas h3{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+.receitas_veganas p{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+.receitas_veganas img{
+    height: 65px; 
+}
 
 footer{
     background-color: #d9d9d9;
@@ -140,7 +473,7 @@ footer img{
     height: 30px;
     margin-top: 30px;
 }
+
 footer p{
     font-family: "Jaldi", sans-serif;
-    
 }
