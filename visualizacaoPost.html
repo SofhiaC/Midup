@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReVirado</title>
+    <link rel="stylesheet" href="visualizacaoPost.css">
+    <!-- Fonte Calligrafitti usada no título -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
+    <!--Fonte jaldi-->
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+    <!--Fonte inter-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="revirado">ReVirado</h1>
+    
+    <div class="botoes_salvos_e_notif">
+        <a><img src="imagens/botao_notif.png" alt="Notificações" class="botao1"></a>
+        <a><img src="imagens/botao_salvos.png" alt="Salvos" class="botao2"></a>
+    </div>
+    <!-- Esse hr é o responsável por fazer a linha horizontal -->
+    <hr/>
+    <div class="nav">
+        <div class="navbar">
+            <a>Home</a>
+            <a href="filtro.html">Filtro</a>
+            <a>Receita</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <div class="usuario">
+            <h3> Usuário </h3>
+            <img src="imagens/foto_usuario.png" alt="Foto de perfil">
+        </div>
+    </div>
+    <!-- Barra de pesquisa -->
+    <div class="barra_geral">
+        <form action="/pesquisar" method="post">
+            <label for="ingrediente"></label>
+            <input type="text" id="ingrediente" name="ingrediente" placeholder="Insira um ingrediente" required>
+            <button type="submit"><img src="imagens/lupa_pesquisa.png"></button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <section id="topoPost">
+        <h1 id="titulo_post"><span class="bold">“COMO CONGELO?”:</span> Abasteça seu congelador com excelentes ideias</h1>
+
+        <img src="imagens/imagem_comida_congelada.svg" alt="Alimentos congelados!" id="imagemTopo">
+
+        <p id="legendaImagem">Por <span class="bold">@chefkiss438</span> - 30 de agosto de 2024</p>
+    </section>
+
+
+    <section id="centralizar">
+        <div class="conteudoPost">
+            <li class="textoNegrito">
+                Quais alimentos podem ser congelados?</li>
+    
+            <p class="textoConteudo">No geral, as frutas, os legumes, as verduras, as ervas finas, as carnes, os ovos, os queijos e o café podem ser congelados no freezer.</p>
+            
+            <li class="textoNegrito">Como congelar alimentos e evitar desperdício?</li>
+    
+            <p class="textoConteudo">
+                Para cada alimento, existe uma recomendação diferente. Confira algumas dicas para congelar corretamente o alimento do seu interesse:</p>
+                    
+            <li class="textoNegrito">Frutas</li>
+    
+            <p class="textoConteudo">É preciso ter cuidado com as frutas mais delicadas, como as peras, bananas e mangas. O ideal é cortar a fruta em pedaços e colocá-los em um recipiente ou forma aberta dentro do freezer. As frutas que possuem mais água, como abacaxi, melão e melancia, podem ficar mais aguadas, por isso o ideal é que, quando descongeladas, elas sejam consumidas apenas em forma de sucos.</p>
+                    
+            <li class="textoNegrito">Legumes e verduras</li>
+    
+            <p class="textoConteudo">Esses alimentos podem ser mantidos congelados por até seis meses. O ideal é armazená-los em recipientes de vidro temperado ou em saquinhos plásticos.</p>
+                    
+            <li class="textoNegrito">Ervas finas</li>
+    
+            <p class="textoConteudo">Você pode armazená-las no freezer em forminhas de gelo com um pouco de água ou em um saquinho plástico bem fechado.</p>
+                    
+            <li class="textoNegrito">Carnes</li>
+    
+            <p class="textoConteudo">Você sabe como congelar carnes? A primeira dica é: você não deve temperar a carne antes de congelá-la. Isso porque alguns temperos, como alho, cebola e pimenta, podem alterar o sabor da carne durante o processo de congelamento. A orientação é armazená-las em potes de vidro ou saquinhos de plástico, mas lembre-se de retirar todo o ar. No geral, os bifes de carnes podem durar de 2 a 3 meses se mantidos congelados corretamente no freezer.</p>
+    
+        </div>
+    </section>
+
+    <br><br>
+
+    <footer>
+        <div class="redes_sociais"> 
+            <img src="imagens/redes_sociais.png" alt="Outras redes sociais do ReVirado.">
+            <p>Todos os direitos reservados - Midup</p>
+        </div>
+    </footer>
+
+</body>
+</html>
