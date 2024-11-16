@@ -14,40 +14,39 @@
     </div>
 
     <div class="wrapper">
-        <form action="">
+        <form method="POST" action="registrar.php">
             <h1>ReVirado</h1>
             <div class="input-box">
                 <i class='bx bxs-user icon'></i>
-                <input type="email" placeholder="E-mail" required>
+                <input type="email" placeholder="E-mail" required name="email">
                 <span class="error"></span>
             </div>
 
             
                 <div class="input-box">
-                    <input type="text" class="lado" placeholder="Apelido" required>
+                    <input type="text" class="lado" placeholder="Nome" required name="nome">
                     <span class="error"></span>
                 </div>
            
 
                 <div class="input-box">
-                    <h6 class="lado">Idade</h6>
-                    <input type="date" class="lado" required>
+                    <input type="number" class="lado" placeholder="idade" required name="idade">
                     <span class="error"></span>
                 </div>
 
                 <div class="input-box">
                     <i class='bx bxs-lock-alt icon'></i>
-                    <input type="password" placeholder="Senha" required>
+                    <input type="password" placeholder="Senha" required name="senha">
                     <span class="error"></span>
                 </div>
                 <div class="input-box">
                     <i class='bx bxs-lock-alt icon'></i>
-                    <input type="password" placeholder="Repita a Senha " required>
+                    <input type="password" placeholder="Repita a Senha " required >
                     <span class="error"></span>
                 </div>
 
-            <button type="submit" class="btn">Entrar</button>
-            <button type="submit" class="btn">Cancelar</button>
+            <button type="submit" class="btn" name="submit" id="submit">Entrar</button>
+            <button type="reset" class="btn" id="cancelar">Cancelar</button>
         
         </form>
     </div>

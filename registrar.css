@@ -63,9 +63,8 @@ footer p {
     color: #333;
 }
 
-
 .wrapper {
-    width: 30%;
+    width: 40%;
     background: #d9d9d9;
     color: black;
     padding: 2rem;
@@ -82,10 +81,10 @@ footer p {
 }
 
 .input-box {
-    position: relative;
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
+        position: relative;
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
 }
 
 .input-box input {
@@ -139,7 +138,9 @@ footer p {
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
+    text-decoration: none;
 }
+
 
 .btn:hover {
     background-color: #555;
@@ -165,5 +166,38 @@ footer p {
     margin: 0;
     display:flex;
     color: #555;
+}
+
+/* ******************************************************* */
+.picture__img {
+    max-width: 100%;
+    padding: 0;
+}
+
+label{
+    position: relative;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    color: #afaeae;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    align-items:start;
+}
+
+select {
+    position: relative;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
