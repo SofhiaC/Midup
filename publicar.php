@@ -38,14 +38,12 @@ function create($conexao) {
 };
 
 function read($conexao) {
-    // Recupera todas as receitas
     $result = $conexao->query("SELECT * FROM tb_receita");
 
     if ($result) {
         if ($result->num_rows > 0) {
             echo "<h2>Receitas Cadastradas:</h2>";
             while ($row = $result->fetch_assoc()) {
-                // Exibe os dados da receita
                 echo "<div>";
                 echo "<h3>" . $row['nome_receita'] . "</h3>";
                 echo "<p><strong>Introdução:</strong> " . $row['introducao'] . "</p>";
