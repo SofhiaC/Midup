@@ -5,6 +5,7 @@ $bancodedados = "revirado";
 $usuario = "root";
 $senha = "";
 
+
 $conexao = new mysqli($hostname, $usuario, $senha, $bancodedados);
 
 if($conexao -> connect_errno){
@@ -12,6 +13,7 @@ if($conexao -> connect_errno){
 } else {
     echo "Conectado";
 }
+
 
 function create($conexao) {
     $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : '';
@@ -26,7 +28,11 @@ function create($conexao) {
 
     $stm = $conexao->prepare("INSERT INTO tb_receita (tempo_preparo, dificuldade, tipo_receita, quant_porcoes, modo_de_preparo, nome_receita, imagem_receita, ingredientes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stm->bind_param("ssssssss", $tempo_preparo, $dificuldade, $categoria, $porcoes, $modo_prep, $titulo, $imagem, $ingredientes);
-    $stm->execute();
+    if ($stm->execute()){
+        echo "Receita inserida com sucesso";
+    }else{
+        echo "falha na inserção: ". mysqli_error($conexao);
+    };
     $stm->close();
 };
 
@@ -46,7 +52,7 @@ function update($conexao, $dificuldade, $titulo){
 function delete($conexao, $nome){
     $stm = $conexao->prepare("DELETE FROM tb_receita WHERE nome_receita = ?");
     $stm->bind_param("s", $nome);
-    $stm->execute();
+    $stm->execute();  
     $stm->close();
 };
 
