@@ -1,6 +1,7 @@
 <?php
 
-include"conexao.php";
+session_start();
+require "conexao.php";
 
 function update($conexao) {
     if (isset($_POST['id_blog'])) {

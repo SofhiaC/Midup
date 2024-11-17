@@ -1,6 +1,7 @@
 <?php
 
-include"conexao.php";
+session_start();
+require "conexao.php";
 
 function delete($conexao) {
     if (isset($_POST['id_blog'])) {

@@ -1,6 +1,6 @@
 <?php
-
-include"conexao.php";
+session_start();
+require "conexao.php";
 
 function read($conexao) {
     $result = $conexao->query("SELECT * FROM tb_blog");
