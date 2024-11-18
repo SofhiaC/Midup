@@ -1,0 +1,240 @@
+*{
+    margin: 0px;
+}
+
+
+.revirado{
+        font-family: "Calligraffitti", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: -55px;
+        margin-top: 10px;
+}
+
+.botoes_salvos_e_notif{
+    margin-right: 20px;
+    text-align: right;
+}
+
+.botao1{
+    height: 25px;
+    cursor: pointer;
+}
+
+.botao2{
+    height: 30px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.linha{
+    background-color: #000;
+    height: 10px;
+    width: 300px;
+}
+
+hr{
+    border-color:#000;
+    box-sizing:border-box;
+    width:100%; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.navbar{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    margin-left: 20px;
+}
+    
+.navbar a{
+    margin-left: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+
+/* tem que descobrir como sparar mais a foto do nome do usuário */
+
+.usuario{
+    text-align: right;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.usuario h3{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    margin-top: 3px;
+}
+
+.usuario img{
+    height: 50px;
+    margin-left: 10px;
+}
+
+.barra_geral{
+    background-color: #E2E2E2;
+    width: 100%;
+    height: 90px;
+    justify-content: space-between;
+}
+
+/* tirar a formatação da pesqusia */
+.barra_geral input{
+    border: none;
+    outline: none;
+    width: 40%;
+    height: 40px;
+    margin: 10px;
+    margin-right: 0px;
+}
+
+.barra_geral button{
+    border: none;
+    background-color: none;
+    cursor: pointer;
+    height: 40px;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+/* Estilo geral */
+
+h1{
+    padding: 10px;
+    font-family: "Inter";
+    text-align: center;
+    font-weight: 300;
+}
+
+  /* Contêiner de cards */
+  .card-container, .explore-more {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  /* Estilo dos cards */
+  .card {
+    font-family: "Jaldi";
+    height: 350px;
+    background: #d9d9d9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Imagem dos cards */
+  .card img {
+    padding: 10px;
+    height: 270px;
+    width: 200px;
+    object-fit: cover;
+  }
+  
+  /* Título das receitas */
+  .title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  /* Estilo das avaliações */
+  .rating {
+    font-size: 0.9rem;
+    color: #f39c12;
+    margin-bottom: 10px;
+  }
+  
+  /* Seção "Explorando Mais" */
+  .explore-more h3 {
+    grid-column: 1 / -1;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+  }
+
+  #editar{
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #7d7d7d;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+    margin-left: 650px;
+  }
+
+  #excluir{
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #7d7d7d;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+  }
+
+  button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+  }
+
+  #botoes{
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+
+
+footer{
+    background-color: #d9d9d9;
+    height: 120px;
+    text-align: center;
+}
+
+footer img{
+    height: 30px;
+    margin-top: 30px;
+}
+
+footer p{
+    font-family: "Jaldi", sans-serif;
+}
