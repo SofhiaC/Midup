@@ -1,6 +1,5 @@
 <?php
-
-    
+session_start();
 
     $email = $_POST['email'];
     $senha = $_POST['senha'];
@@ -16,10 +15,14 @@
         $result = $mysqli->query($sql);
 
         if (mysqli_num_rows($result) < 1) {
+            unset($_SESSION['email_usuario']);
+            unset($_SESSION['senha_usuario']);
             echo "<script>alert('email ou senha incorreto!'); window.location.href='cadastro.html';</script>";
         
         }
         else {
+            $_SESSION['email_usuario'] = $email;
+            $_SESSION['senha_usuario'] = $senha;
             header('Location: filtro.html');
         }
 

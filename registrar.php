@@ -1,5 +1,6 @@
 
         <?php
+        session_start();
 
         
     var_dump($_GET); // Para verificar se o email está sendo passado corretamente
@@ -46,6 +47,18 @@
                 if ($stmt->execute()) {
                     var_dump($email);
                     header('Location: filtro.html');    
+                    if (mysqli_num_rows($result) < 1) {
+                        unset($_SESSION['email_usuario']);
+                        unset($_SESSION['senha_usuario']);
+                        echo "<script>alert('email ou senha incorreto!'); window.location.href='cadastro.html';</script>";
+                    
+                    }
+                    else {
+                        $_SESSION['email_usuario'] = $email;
+                        $_SESSION['senha_usuario'] = $senha;
+                        header('Location: filtro.html');
+                    }
+                    
                 } else {
                     echo "Erro ao salvar no banco de dados: " . $stmt->error;
                 }
