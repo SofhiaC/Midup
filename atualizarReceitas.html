@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReVirado</title>
+    <link rel="stylesheet" href="atualizarReceitas.css">
+    <!-- Fonte Calligrafitti usada no título -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
+    <!--Fonte jaldi-->
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+    <!--Fonte inter-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="revirado">ReVirado</h1>
+    
+    <div class="botoes_salvos_e_notif">
+        <a><img src="imagens/botao_notif.png" alt="Notificações" class="botao1"></a>
+        <a><img src="imagens/botao_salvos.png" alt="Salvos" class="botao2"></a>
+    </div>
+    <!-- Esse hr é o responsável por fazer a linha horizontal -->
+    <hr/>
+    <div class="nav">
+        <div class="navbar">
+            <a>Home</a>
+            <a>Filtro</a>
+            <a>Receita</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <div class="usuario">
+            <h3> Usuário </h3>
+            <img src="imagens/foto_usuario.png" alt="Foto de perfil">
+        </div>
+    </div>
+    <!-- Barra de pesquisa -->
+    <div class="barra_geral">
+        <form action="/pesquisar" method="get">
+            <div id="pesquisa_filtro">
+                <input type="text" id="txtBusca" placeholder="Insira um ingrediente..."/>
+                <button><img src="imagens/lupa_pesquisa.png" id="btnBusca" alt="Buscar"/></button>  
+            </div>
+        </form>
+    </div>
+
+
+    <div id="tabela_input">
+        <form action="PHP/receitas_php/editar_receita.php" id="formulario" method="POST" action="atualizar_receita.php">
+            <h1 id="titulo">Atualizar Receita</h1>
+    
+            <label id="labels" for="titulo">Título da Receita</label>
+            <input id="inputs" type="text" id="titulo" name="titulo" placeholder="Nome da receita" required>
+    
+            <label id="labels" for="imagem_carregada">URL da Imagem</label>
+            <input id="inputs" type="url" id="imagem_carregada" name="imagem_carregada" placeholder="URL da imagem">
+    
+            <label id="labels" for="introducao">Introdução</label>
+            <textarea id="introducao" name="introducao" rows="3" placeholder="Breve descrição"></textarea>
+    
+            <label id="labels" for="ingredientes">Ingredientes</label>
+            <textarea id="ingredientes" name="ingredientes" rows="5" placeholder="Lista de ingredientes separados por vírgula"></textarea>
+    
+            <label id="labels" for="modo_prep">Modo de Preparo</label>
+            <textarea id="modo_prep" name="modo_prep" rows="5" placeholder="Descreva o modo de preparo" required></textarea>
+    
+            <label for="porcoes">Número de Porções</label>
+            <input id="inputs" type="number" id="porcoes" name="porcoes" min="1" placeholder="Ex: 4" required>
+    
+            <label for="dificuldade">Dificuldade</label>
+            <select id="dificuldade" name="dificuldade" required>
+                <option value="Facil">Fácil</option>
+                <option value="Media">Média</option>
+                <option value="Dificil">Difícil</option>
+            </select>
+    
+            <label for="cat">Categoria</label>
+            <select id="cat" name="cat" required>
+                <option value="Cafe da Manha">Café da Manhã</option>
+                <option value="Almoço">Almoço</option>
+                <option value="Jantar">Jantar</option>
+                <option value="Sobremesa">Sobremesa</option>
+                <option value="Receitas Rapidas">Receitas Rápidas</option>
+                <option value="Receitas Veganas">Receitas Veganas</option>
+            </select>
+    
+            <label for="tempo">Tempo de Preparo (minutos)</label>
+            <input type="number" id="tempo" name="tempo" min="1" placeholder="Ex: 30" required>
+    
+            <input type="hidden" name="id_receita" value="">
+            
+            <br><br>
+
+            <button id="botaoUpdate" type="submit">Atualizar Receita</button>
+
+        </form>
+    </div>
+
+</html>
