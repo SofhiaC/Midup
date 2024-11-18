@@ -113,145 +113,100 @@ hr{
     margin-left: 0px;
 }
 
-#textBusca{
-    background-color:transparent;
-}
-
-.pesquisa_filtro {
-    background-color: #fff;
-    width: 50%;
-    height: 40px;
-}
+/* Estilo geral */
 
 h1{
-    font-family: 'Inter';
+    padding: 10px;
+    font-family: "Inter";
     text-align: center;
-    font-weight: 400;
-    font-size: 30px;
+    font-weight: 300;
 }
 
-.geral{
-    border-radius: 7px;
-    background-color: #e4e3e3;
-    height: 400px;
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20px;
-}
+  /* Contêiner de cards */
+  .card-container, .explore-more {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  /* Estilo dos cards */
+  .card {
+    font-family: "Jaldi";
+    height: 350px;
+    background: #d9d9d9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card img {
+    padding: 10px;
+    height: 270px;
+    width: 200px;
+    object-fit: cover;
+  }
+  
+  .title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .rating {
+    font-size: 0.9rem;
+    color: #f39c12;
+    margin-bottom: 10px;
+  }
+  
+  .explore-more h3 {
+    grid-column: 1 / -1;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+  }
 
-.cont_principal{
-    border-radius: 7px;
-    background-color: #e4e3e3;
-    height: 400px;
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20px;
-}
-
-.complementares{
-    border-radius: 7px;
-    background-color: #e4e3e3;
-    height: 400px;
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20px;
-}
-
-.section h3{
-    padding: 25px;
-    font-family: 'Inter';
-    font-weight: 350;
-}
-
-form{
-    margin-left: 25px;
-}
-
-
-#input_titulo{
-    border: none;
-    padding: 7px;
-    width: 605px;
-    border-radius: 3px;
-    font-family: 'Inter';
-    height: 20px;
-    margin-left: 135px;
-}
-
-#input_subtitulo{
-    border: none;
-    padding: 7px;
-    width: 605px;
-    border-radius: 3px;
-    font-family: 'Inter';
-    height: 20px;
-    margin-left: 110px;
-}
-
-#input_img{
-    margin-left: 116px;
-}
-
-#input_topico{
-    border: none;
-    padding: 7px;
-    width: 605px;
-    border-radius: 3px;
-    font-family: 'Inter';
-    height: 20px;
-    margin-left: 110px;
-}
-
-#text_conteudo{
-    border: none;
-    padding: 7px;
-    width: 605px;
-    border-radius: 3px;
-    font-family: 'Inter';
-    height: 90px;
-    margin-left: 87px;
-}
-
-input:hover{
-    background-color: #faf9f9;
-}
-
-#input_intro{
-    border: none;
-    padding: 7px;
-    width: 603px;
-    border-radius: 3px;
-    font-family: 'Inter';
-    height: 20px;
-    margin-left: 98px;
-}
-
-
-
-.section label{
-    font-family: 'Inter';
-    margin: 2px;
-}
-
-.itens{
-    display: flex;
-}
-
-#botao_publicar{
-    font-size: 30px;
-    padding: 15px;
-    font-family: 'Inter';
-    margin-left: 400px;
-    margin-top: 200px;
-    border-radius: 10px;
-    background-color: #000;
-    border: none;
+  #editar{
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: bold;
     color: #fff;
-}
+    background-color: #7d7d7d;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+    margin-left: 700px;
+  }
 
-#botao_publicar:hover{
-    background-color: #686868;
-}
+  a{
+    text-decoration: none;
+  }
+
+  button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+  }
+
+  #botoes{
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
 
 
 footer{

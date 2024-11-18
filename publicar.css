@@ -130,10 +130,17 @@ h1{
     font-size: 30px;
 }
 
+#flecha_volta{
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
 .geral{
     border-radius: 7px;
     background-color: #e4e3e3;
-    height: 400px;
+    height: 175px;
     width: 60%;
     margin-left: 20%;
     margin-right: 20px;
@@ -163,12 +170,6 @@ h1{
     font-weight: 350;
 }
 
-
-form{
-    margin-left: 25px;
-}
-
-
 #input_titulo{
     border: none;
     padding: 7px;
@@ -177,6 +178,10 @@ form{
     font-family: 'Inter';
     height: 20px;
     margin-left: 135px;
+}
+
+#input_img{
+    margin-left: 118px;
 }
 
 input:hover{
@@ -245,7 +250,7 @@ input:hover{
 
 .section label{
     font-family: 'Inter';
-    margin: 2px;
+    margin: 30px;
 }
 
 .itens{
@@ -253,14 +258,19 @@ input:hover{
 }
 
 #botao_publicar{
+    margin-left: 370px;
+    margin-top: 50px;
     font-size: 30px;
     padding: 15px;
     font-family: 'Inter';
-    margin-left: 700px;
     border-radius: 10px;
-    background-color: #000;
+    background-color: rgb(61, 61, 61);
     border: none;
     color: #fff;
+}
+
+#botao_publicar:hover{
+    background-color: #686868;
 }
 
 footer{

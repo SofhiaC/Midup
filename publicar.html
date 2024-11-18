@@ -50,7 +50,11 @@
     <section class="section">
 
         <br>
-        <br>
+
+
+        <img src="imagens/flecha_voltar.png" alt="Flecha Voltar" id="flecha_volta">
+        
+        
 
         <h1>Publicar Receita</h1>
         
@@ -60,7 +64,7 @@
 
         <div class="geral">
             <h3 id="titulo"> <strong>Geral</strong></h3>
-            <form action="post">
+            <form method="post" action="PHP/receitas_php/criar_receita.php">
 
                     <div>
                         <label for="input_titulo"> Título: </label>
@@ -70,11 +74,9 @@
                     <br>
 
                     <div>
-                        <label for="user"> Imagem: </label>
-                        <input type="image" id="input_img">
+                        <label for="imagem_caregada"> Imagem: </label>
+                        <input type="file" id="input_img" name="imagem_caregada">
                     </div>
-
-            </form>
 
         </div>
 
@@ -83,28 +85,26 @@
 
         <div class="cont_principal">
             <h3 id="titulo"> <strong>Conteúdo Principal </strong></h3>
-            <form action="post">
 
                     <div>
                         <label for="input_intro"> Introdução: </label>
-                        <input type="text" name="Introducao" id="input_intro" placeholder="Digite a introdução da sua receita" required>
+                        <input type="text" name="introducao" id="input_intro" placeholder="Digite a introdução da sua receita" required>
                     </div>
 
                     <br>
 
                     <div>
                         <label for="input_ingredientes"> Ingredientes: </label>
-                        <input type="text" id="input_ingredientes" placeholder="Digite os ingredientes da receita" required>
+                        <input type="text" id="input_ingredientes" name="ingredientes" placeholder="Digite os ingredientes da receita" required>
                     </div>
 
                     <br>
 
                     <div>
                         <label for="input_modo_prep"> Modo de preparo: </label>
-                        <input type="text" id="input_modo_prep" placeholder="Digite o modo de preparo da receita" required maxlength="5500">
+                        <input type="text" id="input_modo_prep" name="modo_prep" placeholder="Digite o modo de preparo da receita" required maxlength="5500">
                     </div>
 
-            </form>
         </div>
 
         <br>
@@ -112,11 +112,10 @@
 
         <div class="complementares">
             <h3 id="titulo"> <strong>Complementares</strong></h3>
-            <form action="post">
 
                     <div>
                         <label for="input_porcoes"> Porções: </label>
-                        <input type="text" name="titulo" id="input_porcoes" placeholder="Digite a quantidade de porções da receita" required>
+                        <input type="number" name="porcoes" id="input_porcoes" placeholder="Quantidade de porções da receita" required>
                     </div>
 
                     <br>
@@ -170,7 +169,7 @@
 
                         <br>
 
-                        <label for="">
+                        <label for="Receitas Veganas">
                             <input type="radio" name="cat" value="Receitas Veganas">Receitas Veganas
                         </label>
                     </div>
@@ -179,9 +178,10 @@
 
                     <div>
                         <label for="input_tempo"> Tempo de preparo: </label>
-                        <input type="text" name="titulo" id="input_tempo" placeholder="Digite o tempo de preparo da receita" required>
+                        <input type="text" name="tempo" id="input_tempo" placeholder="Digite o tempo de preparo da receita" required>
                     </div>
 
+                    <button type="submit" id="botao_publicar"> Publicar </button>
             </form>
         </div>
 
@@ -193,7 +193,7 @@
     <br>
     <br>
 
-    <button type="submit" id="botao_publicar"> Publicar </button>
+
 
     <br>
     <br>
