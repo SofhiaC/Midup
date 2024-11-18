@@ -1,26 +1,34 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReVirado - Cadastro</title>
-    <link rel="stylesheet" href="registrar.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
-</head>
-<body>
 
-    <div class="header">
-        <a href="#" class="back-arrow"><i class='bx bx-arrow-back'></i></a>
-    </div>
-
-    <div class="wrapper">
         <?php
+
+        
+    var_dump($_GET); // Para verificar se o email está sendo passado corretamente
+    var_dump($_POST);
             include"conexao.php";
 
             $email = $_POST['email'];
             $nome = $_POST['nome'];
             $idade = $_POST['idade'];
-            $senha = MD5($_POST['senha']);
+            $senha =($_POST['senha']);
+            $objetivos = $_POST['objetivos'];
+            $biografia = $_POST['biografia'] ;
+            $caminho = null;
+        
+            if (isset($_FILES['foto_usuario'])) {
+                $arquivo = $_FILES['foto_usuario'] ;
+        
+                $pasta = "arquivos/";
+                $nome_arquivo = pathinfo($arquivo['name'], PATHINFO_FILENAME);
+                $extensao = strtolower(pathinfo($arquivo['name'], PATHINFO_EXTENSION));
+                $nome_arquivo_completo = $nome_arquivo . "." . $extensao;
+                $caminho = $pasta . $nome_arquivo_completo;
+        
+                $caminho = $pasta . $nome_arquivo . "." . $extensao;
+        
+                if (!move_uploaded_file($arquivo['tmp_name'], $caminho)) {
+                    $caminho = null; 
+                }
+            }
             $verificar = $mysqli->prepare("SELECT email_usuario FROM tb_usuario WHERE email_usuario = ?");
             $verificar->bind_param("s", $email);  
             $verificar->execute();
@@ -31,32 +39,21 @@
                 alert('Usuário já existe.'); window.location.href='registrar.html';
                 </script>";
               die();
-            } else 
-            $sql = "INSERT INTO `tb_usuario`(`email_usuario`,`idade`, `nome_usuario`, `senha_usuario`) VALUES ('$email','$nome','$idade','$senha')";
-            echo "<script>window.location.href='registrar2.php?email=" . urlencode($email) . "';</script>";
+            } else {
+                $stmt = $mysqli->prepare("INSERT INTO tb_usuario (email_usuario, idade, nome_usuario, senha_usuario, objetivos) VALUES (?, ?, ?, ?, ?)");
+                $stmt->bind_param("sisss", $email, $idade, $nome, $senha, $objetivos);
+            
+                if ($stmt->execute()) {
+                    var_dump($email);
+                    header('Location: filtro.html');    
+                } else {
+                    echo "Erro ao salvar no banco de dados: " . $stmt->error;
+                }
 
-                    $verificar->close();
-                    $mysqli->close();
+                $stmt->close();
+            }
+
+            $verificar->close();
+            $mysqli->close();
                     
-            
 ?>
-            
-            
-            
-    </div>
-<br>
-<br>
-<br>
-    <footer>
-        <div class="social-icons">
-            <a href="#"><i class='bx bxl-instagram'></i></a>
-            <a href="#"><i class='bx bxl-discord'></i></a>
-            <a href="#"><i class='bx bxl-pinterest'></i></a>
-            <a href="#"><i class='bx bxl-twitch'></i></a>
-            <a href="#"><i class='bx bxl-youtube'></i></a>
-        </div>
-        <p>Todos os direitos reservados - © 2024 Midup</p>
-    </footer>
-
-</body>
-</html>

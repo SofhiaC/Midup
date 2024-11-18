@@ -14,16 +14,16 @@
     </div>
 
     <div class="wrapper">
-        <form action="">
+        <form  method="post" action="cadastro.php">
             <h1>ReVirado</h1>
             <div class="input-box">
                 <i class='bx bxs-user icon'></i>
-                <input type="email" placeholder="E-mail" required>
+                <input type="email" placeholder="E-mail" required name="email">
                 <span class="error">*Campo obrigatório</span>
             </div>
             <div class="input-box">
                 <i class='bx bxs-lock-alt icon'></i>
-                <input type="password" placeholder="Senha" required>
+                <input type="password" placeholder="Senha" required name="senha">
                 <span class="error">*Campo obrigatório</span>
             </div>
 
@@ -31,9 +31,9 @@
                 <a href="#">Esqueceu a senha?</a>
             </div>
 
-            <button type="submit" class="btn">Entrar</button>
+            <button type="submit" class="btn" name="entrar">Entrar</button>
             <div class="register-link">
-                <p>Não tem uma conta?<a href="#"> Registrar</a> </p>
+                <p>Não tem uma conta?<a href="registrar.html"> Registrar</a> </p>
             </div>
         </form>
     </div>

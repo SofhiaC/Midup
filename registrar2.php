@@ -1,24 +1,42 @@
 <?php 
+    
+    var_dump($_GET); // Para verificar se o email está sendo passado corretamente
+    var_dump($_POST);
+    var_dump($_FILES);
+
     include "conexao.php";
-    $objetivos = $_POST['objetivos'];
-    $biografia = $_POST['biografia'];
-    if (isset($_FILES['avatar'])) {
-        $arquivo = $_FILES['avatar'];
+
+    $email = isset($_GET['email']) ? urldecode($_GET['email']) : null;
+
+    $biografia = $_POST['biografia'] ?? null;
+    $caminho = null;
+
+    if (isset($_FILES['foto_usuario'])) {
+        $arquivo = $_FILES['foto_usuario'] ?? null;
+
         $pasta = "arquivos/";
-        $envio = move_uploaded_file($arquivo['avatar'], $pasta);
+        $nome_arquivo = pathinfo($arquivo['name'], PATHINFO_FILENAME);
+        $extensao = strtolower(pathinfo($arquivo['name'], PATHINFO_EXTENSION));
+        $nome_arquivo_completo = $nome_arquivo . "." . $extensao;
+        $caminho = $pasta . $nome_arquivo_completo;
 
-    $sql = "INSERT INTO `tb_usuario`(`foto_usuario`,`objetivos`, `biografia`) VALUES ('$avatar','$objetivos','$biografia')";
+        $caminho = $pasta . $nome_arquivo . "." . $extensao;
 
-    if ($stmt->execute()) {
-        echo "<script>alert('Cadastro finalizado com sucesso!'); window.location.href='filtro.html';</script>";
-    } else {
-        echo "<script>alert('Erro ao finalizar o cadastro.');</script>";
+        if (!move_uploaded_file($arquivo['tmp_name'], $caminho)) {
+            $caminho = null; 
+        }
     }
 
-    $stmt->close();
+        if ($biografia || $caminho) {
+            $stmt = $mysqli->prepare("UPDATE tb_usuario SET biografia = ?, foto_usuario = ? WHERE email_usuario = ?");
+            $stmt->bind_param("sss", $biografia, $nome_arquivo_completo, $email);     
+
+            $stmt->close();
+
+        }
     $mysqli->close();
 
-    }
+
 
 ?><!DOCTYPE html>
 <html lang="pt">
@@ -36,28 +54,19 @@
     </div>
 
     <div class="wrapper">
-        <form method="POST" action="registrar2.php">
+        <form enctype="multipart/form-data" method="POST" action="registrar2.php?email=<?php echo urlencode($_GET['email']); ?>">
+
         <input type="hidden" name="email" value="<?php echo htmlspecialchars($email); ?>">
             <h1>ReVirado</h1>
-                <label class="picture" for="avatar" >
+                <label class="picture" for="foto_usuario" >
 
-                    <input type="file"  hidden accept="imagens/*"  id="avatar" name="avatar">
+                    <input type="file"  hidden accept="imagen/*"  id="foto_usuario" name="foto_usuario">
                     <span class="aqui_foto"></span>
 
                 </label>
 
-                <select class="nput-box" name="objetivos" id="dificuldade" required>
-                
-                            <option value="" selected disabled>Qual seu objetivo?</option>
-                            <option value="Emagrecimento">Emagrecimento</option>
-                            <option value="Cuidar da saúde">Cuidar da saúde</option>
-                            <option value="Otimizar o tempo">Otimizar o tempo</option>
-                            <option value="Evitar desperdicios">Evitar desperdicios</option>
-                            <option value="Outro">Outro</option>
-                </select>
-
                 <div class="input-box">
-                <input type="text" placeholder="Fale um pouco sobre si:" class="input-box" name="biografia">
+                    <input type="text" placeholder="Fale um pouco sobre si:" class="input-box" name="biografia">
                 </div>
 
             <button type="submit" class="btn" name="submit">Continuar</button> 
@@ -79,7 +88,7 @@
     </footer>
 
     <script>
-       const inputFile = document.querySelector("#avatar");
+       const inputFile = document.querySelector("#foto_usuario");
         const pictureImage = document.querySelector(".aqui_foto");
         const pictureImageTxt = "Adicione sua foto aqui!";
         pictureImage.innerHTML = pictureImageTxt;
