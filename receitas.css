@@ -148,7 +148,6 @@ h1{
     transform: scale(1.05);
   }
   
-  /* Imagem dos cards */
   .card img {
     padding: 10px;
     height: 270px;
@@ -156,7 +155,6 @@ h1{
     object-fit: cover;
   }
   
-  /* Título das receitas */
   .title {
     font-size: 1rem;
     font-weight: bold;
@@ -164,14 +162,12 @@ h1{
     margin: 10px 0;
   }
   
-  /* Estilo das avaliações */
   .rating {
     font-size: 0.9rem;
     color: #f39c12;
     margin-bottom: 10px;
   }
   
-  /* Seção "Explorando Mais" */
   .explore-more h3 {
     grid-column: 1 / -1;
     font-size: 1.5rem;
@@ -193,22 +189,11 @@ h1{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin: 5px;
-    margin-left: 650px;
+    margin-left: 700px;
   }
 
-  #excluir{
-    font-family: "Inter";
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #7d7d7d;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 5px;
+  a{
+    text-decoration: none;
   }
 
   button:hover {

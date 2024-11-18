@@ -1,8 +1,16 @@
 <?php
 
-session_start();
-require "conexao.php";
+$hostname = "localhost"; 
+$bancodedados = "revirado";
+$usuario = "root";
+$senha = "";
 
+$conexao = new mysqli($hostname, $usuario, $senha, $bancodedados);
+if($conexao->connect_errno){
+    echo "Falha ao conectar: (". $conexao->connect_errno . ")" . $conexao->connect_error;
+} else {
+    echo "Conectado";
+}
 
 function create($conexao) {
     $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : '';
@@ -25,5 +33,12 @@ function create($conexao) {
     };
     $stm->close();
 };
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    create($conexao);
+}
+
+
+$conexao->close();
 
 ?>
