@@ -31,7 +31,7 @@
             <a href="blog.html">Blog</a>
         </div>
         <div class="usuario">
-            <h3> Usuário </h3>
+            <a href="cadastro.html"><h3 id="user-name"> Login </h3></a>
             <img src="imagens/foto_usuario.png" alt="Foto de perfil">
         </div>
     </div>
@@ -134,5 +134,9 @@
             <p>Todos os direitos reservados - Midup</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('user-name').textContent = username || 'Login';
+    </script>
 </body>
 </html>

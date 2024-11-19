@@ -1,8 +1,16 @@
 <?php
 
-session_start();
-require "conexao.php";
+$hostname = "localhost"; 
+$bancodedados = "revirado";
+$usuario = "root";
+$senha = "";
 
+$conexao = new mysqli($hostname, $usuario, $senha, $bancodedados);
+if($conexao->connect_errno){
+    echo "Falha ao conectar: (". $conexao->connect_errno . ")" . $conexao->connect_error;
+} else {
+    echo "Conectado";
+}
 
 function update($conexao){
     $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : '';
@@ -17,8 +25,8 @@ function update($conexao){
     $id_usuario = 1;
 
     if ($id_receita) {
-        $stm = $conexao->prepare("UPDATE tb_receita SET tempo_preparo = ?, dificuldade = ?, tipo_receita = ?, quant_porcoes = ?, modo_de_preparo = ?, nome_receita = ?, imagem_receita = ?, ingredientes = ? WHERE id_receita = ?");
-        $stm->bind_param("isssssssi", $tempo_preparo, $dificuldade, $categoria, $porcoes, $modo_prep, $titulo, $imagem, $ingredientes, $id_receita);
+        $stm = $conexao->prepare("UPDATE tb_receita SET tempo_preparo = ?, dificuldade = ?, tipo_receita = ?, quant_porcoes = ?, modo_de_preparo = ?, nome_receita = ?, imagem_receita = ?, ingredientes = ? WHERE id_usuario = 1");
+        $stm->bind_param("isssssssi", $tempo_preparo, $dificuldade, $categoria, $porcoes, $modo_prep, $titulo, $imagem, $ingredientes);
 
         if ($stm->execute()) {
             echo "Receita atualizada com sucesso!";
@@ -30,5 +38,11 @@ function update($conexao){
         echo "ID da receita não fornecido.";
     }
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_receita'])) {
+    update($conexao);
+}
+
+$conexao->close();
 
 ?>

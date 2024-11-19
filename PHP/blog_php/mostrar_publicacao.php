@@ -1,6 +1,15 @@
 <?php
-session_start();
-require "conexao.php";
+$hostname = "localhost"; 
+$bancodedados = "revirado";
+$usuario = "root";
+$senha = "";
+
+$conexao = new mysqli($hostname, $usuario, $senha, $bancodedados);
+if($conexao->connect_errno){
+    echo "Falha ao conectar: (". $conexao->connect_errno . ")" . $conexao->connect_error;
+} else {
+    echo "Conectado";
+}
 
 function read($conexao) {
     $result = $conexao->query("SELECT * FROM tb_blog");
@@ -12,6 +21,7 @@ function read($conexao) {
     }
 }
 
+read($conexao);
 $conexao->close();
 
 ?>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReVirado - Cadastro</title>
+    <link rel="stylesheet" href="registrar.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+</head>
+<body>
+
+    <div class="header">
+        <a href="filtro.html" class="back-arrow"><i class='bx bx-arrow-back'></i></a>
+    </div>
+
+    <div class="wrapper">
+        <form method="POST" action="registrar.php">
+            <h1>ReVirado</h1>
+            <div class="input-box">
+                <i class='bx bxs-user icon'></i>
+                <input type="email" placeholder="E-mail" required name="email">
+                <span class="error"></span>
+            </div>
+
+            
+                <div class="input-box">
+                    <i class='bx bxs-user icon'></i>
+                    <input type="text" class="lado" placeholder="Nome" required name="nome">
+                    <span class="error"></span>
+                </div>
+           
+
+                <div class="input-box">
+                    <i class='bx bxs-user icon'></i>
+                    <input type="number" class="lado" placeholder="idade" required name="idade">
+                    <span class="error"></span>
+                </div>
+
+                <select class="input-box" name="objetivos" id="dificuldade" required style="color: rgb(132, 136, 136);">
+                    <option value="" selected disabled>Qual seu objetivo?</option>
+                    <option value="Emagrecimento">Emagrecimento</option>
+                    <option value="Cuidar da saúde">Cuidar da saúde</option>
+                    <option value="Otimizar o tempo">Otimizar o tempo</option>
+                    <option value="Evitar desperdicios">Evitar desperdicios</option>
+                    <option value="Outro">Outro</option>
+                </select>
+
+                <label class="picture" for="foto_usuario" >
+
+                    <input type="file"  hidden accept="imagen/*"  id="foto_usuario" name="foto_usuario">
+                    <span class="aqui_foto"></span>
+
+                </label>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Fale um pouco sobre si:" class="input-box" name="biografia">
+                </div>
+
+                <div class="input-box">
+                    <i class='bx bxs-lock-alt icon'></i>
+                    <input type="password" placeholder="Senha" required name="senha">
+                    <span class="error"></span>
+                </div>
+                <div class="input-box">
+                    <i class='bx bxs-lock-alt icon'></i>
+                    <input type="password" placeholder="Repita a Senha " required >
+                    <span class="error"></span>
+                </div>
+
+            <button type="submit" class="btn" name="submit" id="submit">Entrar</button>
+            <button type="reset" class="btn" id="cancelar"><a href="filtro.html"></a>Cancelar</button></a>
+        
+        </form>
+    </div>
+<br>
+<br>
+<br>
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-discord'></i></a>
+            <a href="#"><i class='bx bxl-pinterest'></i></a>
+            <a href="#"><i class='bx bxl-twitch'></i></a>
+            <a href="#"><i class='bx bxl-youtube'></i></a>
+        </div>
+        <p>Todos os direitos reservados - © 2024 Midup</p>
+    </footer>
+
+    
+    <script>
+        const inputFile = document.querySelector("#foto_usuario");
+         const pictureImage = document.querySelector(".aqui_foto");
+         const pictureImageTxt = "Adicione sua foto aqui!";
+         pictureImage.innerHTML = pictureImageTxt;
+ 
+         inputFile.addEventListener("change", function (e) {
+         const inputTarget = e.target;
+         const file = inputTarget.files[0];
+ 
+         if (file) {
+             const reader = new FileReader();
+ 
+             reader.addEventListener("load", function (e) {
+             const readerTarget = e.target;
+ 
+             const img = document.createElement("img");
+             img.src = readerTarget.result;
+             img.classList.add("picture__img");
+             pictureImage.innerHTML = '';
+ 
+             pictureImage.innerHTML = "";
+             pictureImage.appendChild(img);
+             });
+ 
+             reader.readAsDataURL(file);
+         } else {
+             pictureImage.innerHTML = pictureImageTxt;
+         }
+         });
+     </script>
+
+</body>
+</html>
