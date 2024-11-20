@@ -45,17 +45,6 @@
                     <option value="Outro">Outro</option>
                 </select>
 
-                <label class="picture" for="foto_usuario" >
-
-                    <input type="file"  hidden accept="imagen/*"  id="foto_usuario" name="foto_usuario">
-                    <span class="aqui_foto"></span>
-
-                </label>
-
-                <div class="input-box">
-                    <input type="text" placeholder="Fale um pouco sobre si:" class="input-box" name="biografia">
-                </div>
-
                 <div class="input-box">
                     <i class='bx bxs-lock-alt icon'></i>
                     <input type="password" placeholder="Senha" required name="senha">
@@ -86,38 +75,7 @@
         <p>Todos os direitos reservados - © 2024 Midup</p>
     </footer>
 
-    
-    <script>
-        const inputFile = document.querySelector("#foto_usuario");
-         const pictureImage = document.querySelector(".aqui_foto");
-         const pictureImageTxt = "Adicione sua foto aqui!";
-         pictureImage.innerHTML = pictureImageTxt;
- 
-         inputFile.addEventListener("change", function (e) {
-         const inputTarget = e.target;
-         const file = inputTarget.files[0];
- 
-         if (file) {
-             const reader = new FileReader();
- 
-             reader.addEventListener("load", function (e) {
-             const readerTarget = e.target;
- 
-             const img = document.createElement("img");
-             img.src = readerTarget.result;
-             img.classList.add("picture__img");
-             pictureImage.innerHTML = '';
- 
-             pictureImage.innerHTML = "";
-             pictureImage.appendChild(img);
-             });
- 
-             reader.readAsDataURL(file);
-         } else {
-             pictureImage.innerHTML = pictureImageTxt;
-         }
-         });
-     </script>
+
 
 </body>
 </html>

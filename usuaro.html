@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReVirado</title>
+    <link rel="stylesheet" href="usuario.css">
+    <!-- Fonte Calligrafitti usada no título -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
+    <!--Fonte jaldi-->
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
+    <!--Fonte inter-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="revirado">ReVirado</h1>
+    
+    <div class="botoes_salvos_e_notif">
+        <a><img src="imagens/botao_notif.png" alt="Notificações" class="botao1"></a>
+        <a><img src="imagens/botao_salvos.png" alt="Salvos" class="botao2"></a>
+    </div>
+    <!-- Esse hr é o responsável por fazer a linha horizontal -->
+    <hr/>
+    <div class="nav">
+        <div class="navbar">
+            <a>Home</a>
+            <a>Filtro</a>
+            <a>Receita</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <div class="usuario">
+            <a href="cadastro.html"><h3 id="user-name"> Login </h3></a>
+            <img src="imagens/foto_usuario.png" alt="Foto de perfil">
+        </div>
+    </div>
+    <br>
+
+    <div id="caixa">
+        <label class="picture" for="foto_usuario" >
+
+            <input type="file"  hidden accept="imagen/*"  id="foto_usuario" name="foto_usuario">
+            <span class="aqui_foto"></span>
+
+        </label>
+
+        <dir id="caixa2">
+            <div id="nome" class="conteudo">
+                Nome    
+            </div>
+            <div id="email" class="conteudo">
+                e-mail
+            </div>
+            <div id="idade" class="conteudo">
+                idade
+            </div>
+            <div id="biografia" class="conteudo">
+                biografia
+            </div>
+            <div id="posts" class="conteudo">
+                posts
+            </div>
+        </dir>
+    </div>
+
+    <br>
+    <br>
+    <footer>
+        <div class="redes_sociais"> 
+            <img src="imagens/redes_sociais.png" alt="Outras redes sociais do ReVirado.">
+            <p>Todos os direitos reservados - Midup</p>
+        </div>
+    </footer>
+
+    <script>
+        const inputFile = document.querySelector("#foto_usuario");
+         const pictureImage = document.querySelector(".aqui_foto");
+         const pictureImageTxt = "";
+         pictureImage.innerHTML = pictureImageTxt;
+ 
+         inputFile.addEventListener("change", function (e) {
+         const inputTarget = e.target;
+         const file = inputTarget.files[0];
+ 
+         if (file) {
+             const reader = new FileReader();
+ 
+             reader.addEventListener("load", function (e) {
+             const readerTarget = e.target;
+ 
+             const img = document.createElement("img");
+             img.src = readerTarget.result;
+             img.classList.add("picture__img");
+             pictureImage.innerHTML = '';
+ 
+             pictureImage.innerHTML = "";
+             pictureImage.appendChild(img);
+             });
+ 
+             reader.readAsDataURL(file);
+         } else {
+             pictureImage.innerHTML = pictureImageTxt;
+         }
+         });
+ 
+     </script>
+ <
+
+</body>
+</html>
