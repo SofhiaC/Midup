@@ -113,6 +113,23 @@ $conexao = new mysqli($hostname, $usuario, $senha, $bancodedados);
         </div>
     </div>
 
-</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
+
+
+<footer>
+    <div class="redes_sociais"> 
+        <img src="imagens/redes_sociais.png" alt="Outras redes sociais do ReVirado.">
+        <p>Todos os direitos reservados - Midup</p>
+    </div>
+</footer>
+
+</body>
 </html>

@@ -1,0 +1,257 @@
+*{
+    margin: 0px;
+}
+
+
+.revirado{
+        font-family: "Calligraffitti", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: -55px;
+        margin-top: 10px;
+}
+
+.botoes_salvos_e_notif{
+    margin-right: 20px;
+    text-align: right;
+}
+
+.botao1{
+    height: 25px;
+    cursor: pointer;
+}
+
+.botao2{
+    height: 30px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.linha{
+    background-color: #000;
+    height: 10px;
+    width: 300px;
+}
+
+hr{
+    border-color:#000;
+    box-sizing:border-box;
+    width:100%; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.navbar{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    margin-left: 20px;
+}
+    
+.navbar a{
+    margin-left: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+
+/* tem que descobrir como sparar mais a foto do nome do usuário */
+
+.usuario{
+    text-align: right;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.usuario h3{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    margin-top: 3px;
+}
+
+.usuario img{
+    height: 50px;
+    margin-left: 10px;
+}
+
+.barra_geral{
+    background-color: #E2E2E2;
+    width: 100%;
+    height: 90px;
+    justify-content: space-between;
+}
+
+/* tirar a formatação da pesqusia */
+.barra_geral input{
+    border: none;
+    outline: none;
+    width: 40%;
+    height: 40px;
+    margin: 10px;
+    margin-right: 0px;
+}
+
+.barra_geral button{
+    border: none;
+    background-color: none;
+    cursor: pointer;
+    height: 40px;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+#textBusca{
+    background-color:transparent;
+}
+
+.pesquisa_filtro {
+    background-color: #fff;
+    width: 50%;
+    height: 40px;
+}
+
+h4{
+    text-align: center;
+    margin-right: 650px;
+    font-family: "Inter";
+    font-weight: 200;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.cardheader{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.cardheader a{
+    text-decoration: none;
+    color: #fff;
+}
+
+#botao_publicar{
+    background-color: #28a745;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: "Inter";
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+
+.botao_publicar:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.card-body {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-left: 90px;
+}
+
+
+.table-body {
+    width: 90%;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: left;
+    font-family: "Inter";
+    font-weight: 300;
+}
+
+.table-body thead tr {
+    background-color: #8a8989;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.table-body th, .table-body td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.table-body tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.td_acoes{
+    display: flex;
+}
+
+#read{
+    padding: 5px;
+    margin-right: 5px;
+    background-color: cadetblue;
+    border: none;
+    border-radius: 5px;
+}
+
+#read a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-family: "Inter";
+}
+
+#update{
+    padding: 5px;
+    margin-right: 5px;
+    background-color: rgb(90, 151, 98);
+    border: none;
+    border-radius: 5px;
+}
+
+#update a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-family: "Inter";
+}
+
+#delete{
+    padding: 5px;
+    margin-right: 5px;
+    background-color: rgb(147, 60, 60);
+    border: none;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-family: "Inter";
+    border-radius: 5px;    
+}
+
+footer{
+    background-color: #d9d9d9;
+    height:120px;
+    text-align: center;
+}
+
+footer img{
+    height: 30px;
+    margin-top: 30px;
+}
+
+footer p{
+    font-family: "Jaldi", sans-serif;
+}
