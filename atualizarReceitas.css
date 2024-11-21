@@ -1,0 +1,261 @@
+*{
+    margin: 0px;
+}
+
+body{
+    font-family: 'inter';
+}
+
+.revirado{
+    font-family: "Calligraffitti", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -55px;
+    margin-top: 10px;
+}
+
+.botoes_salvos_e_notif{
+    margin-right: 20px;
+    text-align: right;
+}
+
+.botao1{
+    height: 25px;
+    cursor: pointer;
+}
+
+.botao2{
+    height: 30px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.linha{
+    background-color: #000;
+    height: 10px;
+    width: 300px;
+}
+
+hr{
+    border-color:#000;
+    box-sizing:border-box;
+    width:100%; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.navbar{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    margin-left: 20px;
+}
+    
+.navbar a{
+    margin-left: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+
+/* tem que descobrir como sparar mais a foto do nome do usuário */
+
+.usuario{
+    text-align: right;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.usuario h3{
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    margin-top: 3px;
+}
+
+.usuario img{
+    height: 50px;
+    margin-left: 10px;
+}
+
+.barra_geral{
+    background-color: #E2E2E2;
+    width: 100%;
+    height: 90px;
+    justify-content: space-between;
+}
+
+/* tirar a formatação da pesqusia */
+.barra_geral input{
+    border: none;
+    outline: none;
+    width: 40%;
+    height: 40px;
+    margin: 10px;
+    margin-right: 0px;
+}
+
+.barra_geral button{
+    border: none;
+    background-color: none;
+    cursor: pointer;
+    height: 40px;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+#textBusca{
+    background-color:transparent;
+}
+
+.pesquisa_filtro {
+    background-color: #fff;
+    width: 50%;
+    height: 40px;
+}
+
+
+.cardheader{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.cardheader h4{
+    font-family: "Inter";
+    font-size: 35px;
+    margin-right: 700px;
+    font-weight: 350;
+
+}
+
+.cardheader a{
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "Inter";
+    color: #fff;
+}
+
+.cardheader button{
+    size: 30px;
+    border-radius: 8px;
+    background-color: rgb(125, 121, 121);
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cardheader button:hover{
+    background-color: rgb(70, 113, 93);
+    transform: translateY(-2px);
+}
+
+.card-body{
+    justify-content: center;
+    align-items: center;
+}
+
+.table-body {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 16px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-body thead {
+    background-color: #d9d9d9;
+    color: #000;
+}
+
+.table-body th,
+.table-body td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.table-body tbody tr {
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+.table-body th {
+    font-family: "Inter";
+    font-weight: 300;
+
+}
+
+.td_acoes a{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 15px;
+}
+
+
+.td_acoes{
+    display: flex;
+}
+
+.td_acoes button{
+    margin: 5px;
+}
+
+#read{
+    size: 10px;
+    background-color: rgb(105, 105, 156);
+    border-radius: 3px;
+    padding: 5px;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#update{
+    size: 10px;
+    background-color: rgb(119, 174, 118);
+    border-radius: 3px;
+    padding: 5px;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#delete{
+    font-size: 15px;
+    size: 15px;
+    background-color: rgb(175, 73, 73);
+    border-radius: 3px;
+    padding: 5px;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#read:hover{
+    transform: translateY(-2px);
+}
+
+#delete:hover{
+    transform: translateY(-2px);
+}
+
+#update:hover{
+    transform: translateY(-2px);
+}
+

@@ -1,9 +1,21 @@
+<?php
+
+$hostname = "localhost"; 
+$bancodedados = "revirado";
+$usuario = "root";
+$senha = "";
+
+$conexao = new mysqli($hostname, $usuario, $senha, $bancodedados);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReVirado</title>
+    <title>Editar Receita</title>
     <link rel="stylesheet" href="publicar.css">
     <!-- Fonte Calligrafitti usada no título -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,7 +68,7 @@
         
         
 
-        <h1>Publicar Receita</h1>
+        <h1>Editar Receita</h1>
         
         <br>
         <br>
@@ -64,18 +76,30 @@
 
         <div class="geral">
             <h3 id="titulo"> <strong>Geral</strong></h3>
-            <form method="post" action="acoes.php">
+            <?php if(isset($_GET['dificuldade'])) {
+                $dificuldade = mysqli_real_escape_string($conexao, $_GET['dificuldade']);
+                $sql = "SELECT * FROM tb_receita WHERE dificuldade='$dificuldade'";
+                $query = mysqli_query($conexao, $sql);
+
+                if (mysqli_num_rows($query) > 0){
+                    $receitas = mysqli_fetch_array($query);
+                }
+
+            
+
+             ?>
+            <form method="post" action="editar_receita.php">
 
                     <div>
                         <label for="input_titulo"> Título: </label>
-                        <input type="text" name="titulo" id="input_titulo" placeholder="Digite o título da sua receita" maxlength="100" required>
+                        <input type="text" name="titulo" id="input_titulo" placeholder="Digite o título da sua receitas" value="<?=$receitas['nome_receita']?>" maxlength="100" required>
                     </div>
 
                     <br>
 
                     <div>
                         <label for="imagem_caregada"> Imagem: </label>
-                        <input type="file" id="input_img" name="imagem_caregada">
+                        <input type="file" id="input_img" name="imagem_caregada" value="<?=$receitas['imagem_receita']?>">
                     </div>
 
         </div>
@@ -88,21 +112,21 @@
 
                     <div>
                         <label for="input_intro"> Introdução: </label>
-                        <input type="text" name="introducao" id="input_intro" placeholder="Digite a introdução da sua receita" required>
+                        <input type="text" name="introducao" id="input_intro" value="<?=$receitas['introducao']?>" placeholder="Digite a introdução da sua receitas" required>
                     </div>
 
                     <br>
 
                     <div>
                         <label for="input_ingredientes"> Ingredientes: </label>
-                        <input type="text" id="input_ingredientes" name="ingredientes" placeholder="Digite os ingredientes da receita" required>
+                        <input type="text" id="input_ingredientes" name="ingredientes" value="<?=$receitas['ingredientes']?>" placeholder="Digite os ingredientes da receitas" required>
                     </div>
 
                     <br>
 
                     <div>
                         <label for="input_modo_prep"> Modo de preparo: </label>
-                        <input type="text" id="input_modo_prep" name="modo_prep" placeholder="Digite o modo de preparo da receita" required maxlength="5500">
+                        <input type="text" id="input_modo_prep" name="modo_prep" value="<?=$receitas['modo_de_preparo']?>" placeholder="Digite o modo de preparo da receitas" required maxlength="5500">
                     </div>
 
         </div>
@@ -115,7 +139,7 @@
 
                     <div>
                         <label for="input_porcoes"> Porções: </label>
-                        <input type="number" name="porcoes" id="input_porcoes" placeholder="Quantidade de porções da receita" required>
+                        <input type="number" name="porcoes" id="input_porcoes" value="<?=$receitas['quant_porcoes']?>" placeholder="Quantidade de porções da receitas" required>
                     </div>
 
                     <br>
@@ -146,7 +170,7 @@
                         <br>
 
                         <label for="cafe">
-                            <input type="radio" name="cat" value="Cafe da Manha">Cafe da Manha
+                            <input type="radio" name="cat" value="Cfé da Manhã">Café da manhã
                         </label>
 
                         <br>
@@ -164,7 +188,7 @@
                         <br>
                         
                         <label for="sobremesas">
-                            <input type="radio" name="cat" value="Sobremesa">Sobremesas
+                            <input type="radio" name="cat" value="Sobremesas">Sobremesas
                         </label>
 
                         <br>
@@ -178,11 +202,16 @@
 
                     <div>
                         <label for="input_tempo"> Tempo de preparo: </label>
-                        <input type="text" name="tempo" id="input_tempo" placeholder="Digite o tempo de preparo da receita" required>
+                        <input type="text" name="tempo" id="input_tempo" value="<?=$receitas['tempo_preparo']?>" placeholder="Digite o tempo de preparo da receitas" required>
                     </div>
 
-                    <button name="publicar" type="submit" id="botao_publicar"> Publicar </button>
+                    <button name="atualizar" type="submit" id="botao_publicar"> Atualizar </button>
             </form>
+            <?php
+                } else{
+                    echo "<h5> Receita não encontrada </h5>";
+                }
+            ?>
         </div>
 
 
