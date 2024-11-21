@@ -113,56 +113,109 @@ hr{
     margin-left: 0px;
 }
 
-#textBusca{
-    background-color:transparent;
-}
-
-.pesquisa_filtro {
-    background-color: #fff;
-    width: 50%;
-    height: 40px;
-
-/*fim do cabeçalho, aqui começa o css do conteudo*/
-}
-#centralizar{
+.introducao {
+    border-radius: 10px;
+    background-color: #E2E2E2;
     display: flex;
-    justify-content: center;
-}
-#topoPost{
-    display:grid;
-    justify-content: center;    
-}
-#imagemTopo{
-    width: 700px;
-    padding-left: 100px;
-}
-.bold {
-    font-weight: bold;
-}
-.conteudoPost{
-    width: 850px;
+    height: 400px;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20px;
 }
 
-#titulo_post{
-    font-family: 'Inter';
-    font-size: 30px;
-    font-weight:normal;
+.introducao img{
+    margin-top: 38px;
+    margin-right: 38px;
+    width: 425px;
+    height: 325px;
+}
+.infos h2{
+    font-weight: bold;
+    font-family: "Jaldi";
     text-align: center;
-    margin-bottom: 10px;
-}
-#legendaImagem{
-    font-family: 'inter';
-    margin-top: 10px;
+    margin-top: 60px;
+    font-size: 22px;
+
 }
 
-.textoNegrito{
-    font-family: 'inter';
-    font-weight: bold;
-    margin-top: 15px;
+.infos p{
+    font-size: 15px;
+    font-weight: 10px;
+    font-family: "Inter";
+    margin-left: 38px;
+    margin-right: 38px;
+    text-align:justify ;
 }
-.textoConteudo{
-    font-weight: normal;
+.melh_av{
+    font-weight:normal;
+    font-family: "Inter";
+    font-size: 22px;
+    text-align: center;
+
+}
+
+
+.container-post {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
     font-family: 'inter';
+}
+
+
+.post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+
+.blog-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    margin: 0 0 10px;
+}
+
+
+.blog-subtitle {
+    font-size: 1.1rem;
+    color: #000000;
+    margin: 0 0 10px;
+}
+
+.blog-text {
+    font-size: 1rem;
+    color: #000000;
+    margin: 0 0 15px;
+}
+
+.blog-link {
+    font-size: 1rem;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.blog-link:hover {
+    color: #0056b3;
+}
+
+
+
+button{
+    background-color: white;
+    border-color: #E2E2E2;
 }
 
 footer{

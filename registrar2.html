@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReVirado - Cadastro</title>
+    <link rel="stylesheet" href="registrar.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+</head>
+<body>
+
+    <div class="header">
+        <a href="#" class="back-arrow"><i class='bx bx-arrow-back'></i></a>
+    </div>
+
+    <div class="wrapper">
+
+        <form enctype="multipart/form-data" method="POST" action="registrar2.php?>">
+
+        <input type="hidden" name="email" value="<?php echo htmlspecialchars($email); ?>">
+            <h1>ReVirado</h1>
+            <span>Seja bem vindo(a) <span id="Apelido">nome</span>!<span> 
+                <label class="picture" for="foto_usuario" >
+
+                    <input type="file"  hidden accept="imagen/*"  id="foto_usuario" name="foto_usuario">
+                    <span class="aqui_foto"></span>
+
+                </label>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Fale um pouco sobre si:" class="input-box" name="biografia">
+                </div>
+
+            <button type="submit" class="btn" name="submit">Salvar</button>
+            <button type="Pular" class="btn" name="submit">Pular</button>  
+        
+        </form>
+    </div>
+<br>
+<br>
+<br>
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-discord'></i></a>
+            <a href="#"><i class='bx bxl-pinterest'></i></a>
+            <a href="#"><i class='bx bxl-twitch'></i></a>
+            <a href="#"><i class='bx bxl-youtube'></i></a>
+        </div>
+        <p>Todos os direitos reservados - © 2024 Midup</p>
+    </footer>
+
+    <script>
+       const inputFile = document.querySelector("#foto_usuario");
+        const pictureImage = document.querySelector(".aqui_foto");
+        const pictureImageTxt = "Adicione sua foto aqui!";
+        pictureImage.innerHTML = pictureImageTxt;
+
+        inputFile.addEventListener("change", function (e) {
+        const inputTarget = e.target;
+        const file = inputTarget.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.addEventListener("load", function (e) {
+            const readerTarget = e.target;
+
+            const img = document.createElement("img");
+            img.src = readerTarget.result;
+            img.classList.add("picture__img");
+            pictureImage.innerHTML = '';
+
+            pictureImage.innerHTML = "";
+            pictureImage.appendChild(img);
+            });
+
+            reader.readAsDataURL(file);
+        } else {
+            pictureImage.innerHTML = pictureImageTxt;
+        }
+        });
+
+    </script>
+</body>
+</html>
