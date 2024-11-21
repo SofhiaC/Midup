@@ -23,7 +23,7 @@ session_start();
         else {
             $_SESSION['email_usuario'] = $email;
             $_SESSION['senha_usuario'] = $senha;
-            header('Location: filtro.html');
+            header('Location: filtro2.php');
         }
 
     }

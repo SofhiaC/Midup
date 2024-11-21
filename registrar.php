@@ -40,6 +40,7 @@ if ($resultado->num_rows > 0) {
     
                 $_SESSION['id'] = $usuario['id_usuario'];
                 $_SESSION['nome'] = $usuario['nome_usuario'];
+                $_SESSION['email'] = $usuario['email_usuario'];
     
                 header('Location: registrar2.html');
                 exit();
