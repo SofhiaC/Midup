@@ -2,19 +2,19 @@
     margin: 0px;
 }
 
-body{
-    font-family: 'inter';
+.body{
+    display: flex;
 }
 
 .revirado{
-    font-family: "Calligraffitti", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: -55px;
-    margin-top: 10px;
+        font-family: "Calligraffitti", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: -55px;
+        margin-top: 10px;
 }
 
 .botoes_salvos_e_notif{
@@ -116,52 +116,53 @@ hr{
     margin-left: 0px;
 }
 
-#textBusca{
-    background-color:transparent;
-}
 
-.pesquisa_filtro {
-    background-color: #fff;
-    width: 50%;
-    height: 40px;
-}
-
-
-
-#formulario {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-#titulo {
+#oPost{
+    font-family: 'inter';
     text-align: center;
-    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    background-color: #f0f0f0;
+
 }
-#labels {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
+
+#tituloPost{
+    font-size: 50px;
+    margin: 20px;
 }
-#inputs, textarea, select {
-    width: 100%;
+
+#corpoTexto{
+    width: 40%;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;
+    margin: 20px
+}
+
+
+button{
+    background-color: white;
+    border-color: #E2E2E2;
+}
+
+footer{
+    background-color: #d9d9d9;
+    height:120px;
+
+    text-align: center;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-#botaoUpdate {
+    margin-top: end;
     width: 100%;
-    padding: 10px;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
 }
-.button:hover {
-    background: #218838;
+
+footer img{
+    height: 30px;
+    margin-top: 30px;
+}
+
+footer p{
+    font-family: "Jaldi", sans-serif;
 }
