@@ -9,10 +9,10 @@ $conexao = new mysqli($hostname, $usuario, $senha, $bancodedados);
 if($conexao->connect_errno){
     echo "Falha ao conectar: (". $conexao->connect_errno . ")" . $conexao->connect_error;
 } else {
-    echo "Conectado";
+    echo"Conectado";
 }
 
-function update($conexao){
+function create($conexao) {
     $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : '';
     $imagem = isset($_POST['imagem_carregada']) ? $_POST['imagem_carregada'] : '';
     $introducao = isset($_POST['introducao']) ? $_POST['introducao'] : '';
@@ -24,23 +24,28 @@ function update($conexao){
     $tempo_preparo = isset($_POST['tempo']) ? $_POST['tempo'] : '';
     $id_usuario = 1;
 
-    if ($id_receita) {
-        $stm = $conexao->prepare("UPDATE tb_receita SET tempo_preparo = ?, dificuldade = ?, tipo_receita = ?, quant_porcoes = ?, modo_de_preparo = ?, nome_receita = ?, imagem_receita = ?, ingredientes = ? WHERE id_usuario = 1");
-        $stm->bind_param("isssssssi", $tempo_preparo, $dificuldade, $categoria, $porcoes, $modo_prep, $titulo, $imagem, $ingredientes);
+    $stm = $conexao->prepare("INSERT INTO tb_receita (id_usuario, tempo_preparo, introducao, dificuldade, tipo_receita, quant_porcoes, modo_de_preparo, nome_receita, imagem_receita, ingredientes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stm->bind_param("issssssss", $id_usuario, $tempo_preparo, $introducao, $dificuldade, $categoria, $porcoes, $modo_prep, $titulo, $imagem, $ingredientes);
+    if ($stm->execute()){
+        echo "Receita inserida com sucesso";
+    }else{
+        echo "falha na inserção: ". mysqli_error($conexao);
+    };
+    $stm->close();
+};
 
-        if ($stm->execute()) {
-            echo "Receita atualizada com sucesso!";
-        } else {
-            echo "Falha na atualização: " . mysqli_error($conexao);
-        }
-        $stm->close();
-    } else {
-        echo "ID da receita não fornecido.";
-    }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    create($conexao);
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_receita'])) {
-    update($conexao);
+if (mysqli_affected_rows($conexao) > 0) {
+    $_SESSION['mensagem'] = 'Receita publicada com sucesso';
+    header('Location: minhasReceitas.php');
+    exit;
+} else {
+    $_SESSION['mensagem'] = 'Receita não foi publicada';
+    header('Location: minhasReceitas.php');
+    exit;
 }
 
 $conexao->close();
