@@ -28,7 +28,7 @@
             $stmt->bind_param("sss", $biografia, $nome_arquivo_completo, $id);     
 
             if ($stmt->execute()) {
-                header('Location: filtro2.php');
+                header('Location: filtro.html');
             }else {
                 echo "Erro ao salvar no banco de dados: " . $stmt->error;
             }
