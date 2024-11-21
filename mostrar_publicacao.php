@@ -92,9 +92,15 @@ if ($result->num_rows > 0) {
     
     <div id="botoesBlog"> 
         <form action="editar_publicacao.php" method="GET">
-            <input type="hidden" name="id" value="<?= urlencode($post['id_blog']) ?>">
+            <input type="hidden" name="id" value="<?= $id_blog ?>">
             <button type="submit" class="btn-editar">Editar</button>
         </form>
+        
+        <form action="deletar_publicacao.php" method="GET">
+            <input type="hidden" name="id" value="<?= $id_blog ?>">
+            <button type="submit" class="btn-deletar">Deletar</button>
+        </form>
+
     </div>
 
     <footer>

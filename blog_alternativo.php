@@ -12,11 +12,10 @@ function read($conexao) {
     $result = $conexao->query($query);
     
     if ($result && $result->num_rows > 0) {
-        return $result->fetch_all(MYSQLI_ASSOC); // Retorna os dados em um array associativo
-    }
-    return []; // Retorna vazio se não houver dados
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    return [];
 }
-   
+}
 ?>
 
 <!DOCTYPE html>

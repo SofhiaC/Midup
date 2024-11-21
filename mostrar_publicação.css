@@ -142,7 +142,22 @@ hr{
     margin: 20px
 }
 
-
+.btn-deletar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: red; 
+    color: white; 
+    text-decoration: none;
+    border-radius: 5px;
+}
+.btn-editar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(0, 38, 255); 
+    color: white; 
+    text-decoration: none;
+    border-radius: 5px;
+}
 button{
     background-color: white;
     border-color: #E2E2E2;
