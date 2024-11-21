@@ -1,3 +1,24 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+include "conexao.php";
+$id = $_SESSION['id'];
+$sqli = "SELECT * FROM tb_usuario WHERE $id";
+$resultado = $mysqli->query($sqli);
+$todos = mysqli_fetch_assoc($resultado);
+
+$nome = $todos['nome_usuario'];
+$email = $todos['email_usuario'];
+$idade = $todos['idade'];
+$objetivos = $todos['objetivos'];
+$biografia = $todos['biografia'];
+$foto = $todos['foto_usuario'];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -26,42 +47,56 @@
     <div class="nav">
         <div class="navbar">
             <a>Home</a>
-            <a>Filtro</a>
-            <a>Receita</a>
+            <a href="filtro.html">Filtro</a>
+            <a href="receitas.html">Receita</a>
             <a href="blog.html">Blog</a>
-        </div>
-        <div class="usuario">
-            <a href="cadastro.html"><h3 id="user-name"> Login </h3></a>
-            <img src="imagens/foto_usuario.png" alt="Foto de perfil">
         </div>
     </div>
     <br>
 
     <div id="caixa">
-        <label class="picture" for="foto_usuario" >
+        <div id="foto">
+            <label class="picture" for="foto_usuario" >
+                Sua foto aqui!
+                <input type="file"  hidden accept="imagen/*"  id="foto_usuario" name="foto_usuario">
+                <span class="aqui_foto"><?php echo  $todos['foto_usuario'] ;?></span>
 
-            <input type="file"  hidden accept="imagen/*"  id="foto_usuario" name="foto_usuario">
-            <span class="aqui_foto"></span>
+            </label>
+        </div>
 
-        </label>
-
-        <dir id="caixa2">
+        <div id="caixa2">
+            <p class="nome">Nome:</p>
             <div id="nome" class="conteudo">
-                Nome    
+                <?php echo  $nome ;?>
             </div>
+            <p class="email">e-mail:</p>
             <div id="email" class="conteudo">
-                e-mail
+            <?php echo  $todos['email_usuario'] ;?>
             </div>
+            <p class="pa">idade:</p>
+            <p class="pe">objetivo:</p>
             <div id="idade" class="conteudo">
-                idade
+            <?php echo  $todos['idade'] ;?>
+            </div >
+            
+            <div id="objetivos1" class="conteudo">
+            <?php echo  $todos['objetivos'] ;?>
             </div>
+            <p class="biografia">biografia:</p>
             <div id="biografia" class="conteudo">
-                biografia
+            <?php echo  $todos['biografia'] ;?>
             </div>
-            <div id="posts" class="conteudo">
-                posts
-            </div>
-        </dir>
+        </div>
+        <hr>
+        <div id="botoes">
+            <form action="" method="post">
+
+                <button class="bts" name="sair_conta" type >Sair da conta</button>
+                <button class="bts" name="editar_conta"><a href="editar.php">Editar perfil</a></button>
+                            
+            </form>
+        </div>
+
     </div>
 
     <br>
